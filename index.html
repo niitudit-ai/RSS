@@ -87,11 +87,11 @@
             margin-bottom: 20px;
         }
 
-        /* ── LEFT: BHAGWA DHWAJ (2 PATTI - SIMPLE) ── */
+        /* ── LEFT: BHAGWA DHWAJ ── */
         .flag-box {
             position: relative;
-            width: 90px;
-            height: 120px;
+            width: 100px;
+            height: 130px;
             flex-shrink: 0;
         }
 
@@ -101,40 +101,53 @@
             transform: translateX(-50%);
             bottom: 0;
             width: 5px;
-            height: 120px;
-            background: linear-gradient(90deg, #777, #bbb, #999, #bbb, #777);
+            height: 130px;
+            background: linear-gradient(90deg, #888, #ccc, #aaa, #ccc, #888);
             border-radius: 3px;
-            box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            box-shadow: 1px 0 3px rgba(0,0,0,0.3);
         }
 
-        /* Golden ball on top */
+        /* Dark ball on top */
         .flag-pole::before {
             content: '';
             position: absolute;
-            top: -8px;
-            left: -5px;
-            width: 14px;
-            height: 14px;
-            background: radial-gradient(circle at 35% 35%, #555, #333, #111);
+            top: -10px;
+            left: -6px;
+            width: 16px;
+            height: 16px;
+            background: radial-gradient(circle at 35% 30%, #666, #222, #000);
             border-radius: 50%;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Small neck below ball */
+        .flag-pole::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: -2px;
+            width: 8px;
+            height: 6px;
+            background: linear-gradient(90deg, #555, #999, #555);
+            border-radius: 2px;
         }
 
         /* Flag SVG */
         .flag-svg {
             position: absolute;
-            top: 5px;
-            left: 52%;
-            width: 70px;
-            height: 85px;
-            animation: simpleWave 3s ease-in-out infinite;
-            transform-origin: left center;
+            top: 8px;
+            left: 53%;
+            width: 72px;
+            height: 90px;
+            animation: flagFlow 3.5s ease-in-out infinite;
+            transform-origin: left top;
         }
 
-        @keyframes simpleWave {
-            0%, 100% { transform: rotate(0deg); }
-            30% { transform: rotate(-1.5deg); }
-            60% { transform: rotate(1deg); }
+        @keyframes flagFlow {
+            0%, 100% { transform: rotate(0deg) skewY(0deg); }
+            25% { transform: rotate(-1deg) skewY(-0.5deg); }
+            50% { transform: rotate(0.5deg) skewY(0.3deg); }
+            75% { transform: rotate(-0.5deg) skewY(-0.3deg); }
         }
 
         /* ── CENTER: RSS TEXT ── */
@@ -608,18 +621,19 @@
             }
 
             .flag-box {
-                width: 65px;
-                height: 90px;
+                width: 72px;
+                height: 95px;
             }
 
             .flag-pole {
-                height: 90px;
+                height: 95px;
+                width: 4px;
             }
 
             .flag-svg {
-                width: 50px;
+                width: 52px;
                 height: 65px;
-                top: 4px;
+                top: 6px;
             }
 
             .person-box {
@@ -731,17 +745,17 @@
             }
 
             .flag-box {
-                width: 50px;
-                height: 72px;
+                width: 55px;
+                height: 75px;
             }
 
             .flag-pole {
-                height: 72px;
+                height: 75px;
             }
 
             .flag-svg {
-                width: 38px;
-                height: 50px;
+                width: 40px;
+                height: 52px;
             }
 
             .person-box {
@@ -766,35 +780,58 @@
 
         <!-- RSS Logo Row: Flag | Text | Person -->
         <div class="rss-logo-row">
-            <!-- LEFT: Bhagwa Dhwaj (2 Patti - Simple) -->
+            <!-- LEFT: Bhagwa Dhwaj -->
             <div class="flag-box">
                 <div class="flag-pole"></div>
-                <svg class="flag-svg" viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg">
+                <svg class="flag-svg" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
                     <defs>
-                        <linearGradient id="flagGrad1" x1="0%" y1="0%" x2="100%" y2="50%">
-                            <stop offset="0%" style="stop-color:#E53900"/>
-                            <stop offset="40%" style="stop-color:#FF5722"/>
-                            <stop offset="100%" style="stop-color:#FF8C00"/>
+                        <linearGradient id="flagGrad" x1="0%" y1="0%" x2="80%" y2="80%">
+                            <stop offset="0%" style="stop-color:#D32F2F"/>
+                            <stop offset="25%" style="stop-color:#E64A19"/>
+                            <stop offset="50%" style="stop-color:#FF5722"/>
+                            <stop offset="75%" style="stop-color:#FF8C00"/>
+                            <stop offset="100%" style="stop-color:#FFA726"/>
                         </linearGradient>
-                        <linearGradient id="flagGrad2" x1="0%" y1="0%" x2="100%" y2="50%">
-                            <stop offset="0%" style="stop-color:#D84315"/>
-                            <stop offset="40%" style="stop-color:#FF671F"/>
-                            <stop offset="100%" style="stop-color:#FFA040"/>
+                        <linearGradient id="flagShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#fff;stop-opacity:0.1"/>
+                            <stop offset="100%" style="stop-color:#000;stop-opacity:0.15"/>
                         </linearGradient>
                     </defs>
-                    <!-- Upper Patti (pointed tail) -->
-                    <path d="M0 2 C15 0, 35 3, 55 8 C65 11, 72 15, 68 20 C60 26, 40 22, 30 25 L55 28 L0 38 Z" 
-                          fill="url(#flagGrad1)"/>
-                    <!-- Fold shadow on upper patti -->
-                    <path d="M0 20 C10 18, 25 22, 40 20 C50 18, 55 22, 55 28 L30 25 C40 22, 60 26, 68 20 C72 15, 65 11, 55 8 C50 10, 40 12, 30 15 Z" 
-                          fill="rgba(0,0,0,0.08)"/>
-                          
-                    <!-- Lower Patti (pointed tail) -->
-                    <path d="M0 42 C15 40, 35 44, 55 48 C65 51, 70 55, 66 60 C58 66, 38 62, 28 65 L52 68 L0 78 Z" 
-                          fill="url(#flagGrad2)"/>
-                    <!-- Fold shadow on lower patti -->
-                    <path d="M0 60 C10 58, 25 62, 38 60 C48 58, 52 62, 52 68 L28 65 C38 62, 58 66, 66 60 C70 55, 65 51, 55 48 C48 50, 38 52, 28 55 Z" 
-                          fill="rgba(0,0,0,0.08)"/>
+                    <!-- Main flag body - single cloth with forked/V-cut tail -->
+                    <path d="M0 0 
+                             C5 2, 15 -1, 30 3 
+                             C45 7, 60 4, 70 10 
+                             C75 13, 72 18, 68 22 
+                             C62 28, 50 30, 55 38 
+                             C60 45, 65 43, 62 50 
+                             C58 56, 48 54, 42 58 
+                             L58 62 
+                             C50 56, 40 58, 30 60 
+                             C20 62, 10 58, 0 62 
+                             L0 52 
+                             L15 50 
+                             C8 46, 3 42, 0 38
+                             Z" 
+                          fill="url(#flagGrad)"/>
+                    <!-- Shading overlay -->
+                    <path d="M0 0 
+                             C5 2, 15 -1, 30 3 
+                             C45 7, 60 4, 70 10 
+                             C75 13, 72 18, 68 22 
+                             C62 28, 50 30, 55 38 
+                             C60 45, 65 43, 62 50 
+                             C58 56, 48 54, 42 58 
+                             L58 62 
+                             C50 56, 40 58, 30 60 
+                             C20 62, 10 58, 0 62 
+                             L0 52 
+                             L15 50 
+                             C8 46, 3 42, 0 38
+                             Z" 
+                          fill="url(#flagShadow)"/>
+                    <!-- Fold highlight -->
+                    <path d="M5 5 C15 3, 30 6, 45 8 C55 10, 60 12, 55 18 C48 22, 35 20, 25 22" 
+                          stroke="rgba(255,255,255,0.15)" stroke-width="2" fill="none"/>
                 </svg>
             </div>
 
