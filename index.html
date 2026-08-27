@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>युवा व्यवसायी गोष्ठी - ३० अगस्त | राष्ट्रीय स्वयंसेवक संघ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --saffron: #FF671F;
+            --saffron-dark: #E65100;
+            --saffron-light: #FFF3E0;
+            --green-dark: #046A38;
+            --green-light: #E8F5E9;
+            --gold: #D4AF37;
+            --maroon: #800000;
+            --cream: #FFF8E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Hindi', serif;
+            background: var(--cream);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255,103,31,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(255,103,31,0.05) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF671F' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+        }
+
+        .page-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+
+        /* ══════════════════════════════════════════
+           TOP DECORATIVE BANNER
+           ══════════════════════════════════════════ */
+        .top-banner {
+            background: linear-gradient(135deg, var(--saffron) 0%, #FF8F00 50%, var(--saffron-dark) 100%);
+            border-radius: 20px 20px 0 0;
+            padding: 8px;
+            position: relative;
+        }
+
+        .top-banner-inner {
+            border: 2px dashed rgba(255,255,255,0.4);
+            border-radius: 15px 15px 0 0;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .top-banner .om-text {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2em;
+            letter-spacing: 8px;
+        }
+
+        /* ══════════════════════════════════════════
+           MAIN CONTAINER
+           ══════════════════════════════════════════ */
+        .container {
+            background: #ffffff;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 
+                0 25px 80px rgba(230,81,0,0.15),
+                0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ══════════════════════════════════════════
+           HEADER SECTION WITH LOGO
+           ══════════════════════════════════════════ */
+        .header {
+            background: linear-gradient(180deg, #ffffff 0%, var(--saffron-light) 100%);
+            padding: 30px 30px 20px;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid var(--saffron);
+        }
+
+        /* RSS Logo SVG */
+        .rss-logo-container {
+            margin-bottom: 15px;
+        }
+
+        .rss-logo {
+            width: 280px;
+            height: auto;
+        }
+
+        /* RSS Flag SVG */
+        .rss-flag {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .header-title {
+            font-size: 2.2em;
+            color: var(--saffron-dark);
+            font-weight: 800;
+            margin: 10px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .header-subtitle {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .date-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--saffron-dark), var(--saffron));
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(230,81,0,0.3);
+        }
+
+        .date-badge .calendar-icon {
+            font-size: 1.2em;
+        }
+
+        /* Decorative line under header */
+        .header-decoration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 40px;
+            background: #fff;
+        }
+
+        .header-decoration .line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+        }
+
+        .header-decoration .center-symbol {
+            padding: 0 15px;
+            color: var(--saffron);
+            font-size: 1.8em;
+        }
+
+        /* ══════════════════════════════════════════
+           FORM SECTIONS
+           ══════════════════════════════════════════ */
+        .form-container {
+            padding: 10px 40px 30px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 25px 0 20px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--saffron-light), #fff);
+            border-radius: 12px;
+            border-left: 4px solid var(--saffron);
+        }
+
+        .section-header .section-icon {
+            font-size: 1.4em;
+        }
+
+        .section-header h2 {
+            font-size: 1.2em;
+            color: var(--saffron-dark);
+            font-weight: 700;
+        }
+
+        /* Form Fields */
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.05em;
+            color: #333;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .form-group label .required {
+            color: #d32f2f;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            font-family: 'Noto Sans Devanagari', serif;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--saffron);
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(255,103,31,0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        /* Two column layout for some fields */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* ══════════════════════════════════════════
+           RUCHI / INTEREST SECTION
+           ══════════════════════════════════════════ */
+        .ruchi-section {
+            background: linear-gradient(135deg, var(--saffron-light) 0%, #FFF9C4 50%, var(--saffron-light) 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 2px solid rgba(255,103,31,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ruchi-section::before {
+            content: '🙏';
+            position: absolute;
+            top: -5px;
+            right: 15px;
+            font-size: 2em;
+            opacity: 0.2;
+        }
+
+        .ruchi-title {
+            text-align: center;
+            font-size: 1.3em;
+            color: var(--saffron-dark);
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .ruchi-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .ruchi-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .ruchi-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 2px solid #ffe0b2;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .ruchi-item:hover {
+            border-color: var(--saffron);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,103,31,0.15);
+        }
+
+        .ruchi-item.selected {
+            border-color: var(--saffron);
+            background: var(--saffron-light);
+            box-shadow: 0 4px 12px rgba(255,103,31,0.2);
+        }
+
+        .ruchi-item .number {
+            background: linear-gradient(135deg, var(--saffron-dark), var(--saffron));
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85em;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .ruchi-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .ruchi-item .ruchi-label {
+            font-size: 0.95em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .ruchi-item .check-icon {
+            margin-left: auto;
+            font-size: 1.2em;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .ruchi-item.selected .check-icon {
+            opacity: 1;
+        }
+
+        /* ══════════════════════════════════════════
+           SUBMIT BUTTON
+           ══════════════════════════════════════════ */
+        .submit-section {
+            text-align: center;
+            padding: 20px 0 10px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--saffron-dark) 0%, var(--saffron) 100%);
+            color: #ffffff;
+            border: none;
+            padding: 16px 60px;
+            font-size: 1.3em;
+            font-family: 'Noto Sans Devanagari', serif;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(230,81,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(230,81,0,0.5);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ══════════════════════════════════════════
+           FOOTER
+           ══════════════════════════════════════════ */
+        .footer {
+            text-align: center;
+            padding: 20px 30px;
+            background: linear-gradient(180deg, #fff, var(--saffron-light));
+            border-top: 2px solid #ffe0b2;
+        }
+
+        .footer .tagline {
+            color: var(--saffron-dark);
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .footer .sub-tagline {
+            color: #888;
+            font-size: 0.85em;
+        }
+
+        /* ══════════════════════════════════════════
+           SUCCESS MESSAGE
+           ══════════════════════════════════════════ */
+        .success-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .success-overlay.show {
+            display: flex;
+        }
+
+        .success-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: popIn 0.4s ease;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .success-box .success-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
+
+        .success-box h2 {
+            color: var(--green-dark);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .success-box p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .success-box .close-btn {
+            margin-top: 20px;
+            padding: 10px 30px;
+            background: var(--saffron);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            font-family: 'Noto Sans Devanagari', serif;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Loading spinner */
+        .spinner {
+            display: none;
+            margin: 10px auto;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--saffron);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ══════════════════════════════════════════
+           RESPONSIVE
+           ══════════════════════════════════════════ */
+        @media (max-width: 650px) {
+            .page-wrapper {
+                padding: 10px 8px;
+            }
+
+            .form-container {
+                padding: 10px 20px 25px;
+            }
+
+            .header-title {
+                font-size: 1.6em;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .ruchi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .date-badge {
+                font-size: 1.1em;
+                padding: 8px 20px;
+            }
+
+            .submit-btn {
+                padding: 14px 40px;
+                font-size: 1.1em;
+            }
+
+            .rss-logo {
+                width: 200px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group, .ruchi-item {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top Decorative Banner -->
+<div class="page-wrapper">
+    <div class="top-banner">
+        <div class="top-banner-inner">
+            <span class="om-text">॥ ॐ ॥ राष्ट्राय स्वाहा ॥ ॐ ॥</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header with Logo -->
+        <div class="header">
+            <div class="rss-logo-container">
+                <!-- RSS Logo - SVG -->
+                <svg class="rss-logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Flag pole -->
+                    <rect x="60" y="10" width="4" height="100" fill="#8B4513"/>
+                    <!-- Saffron flag -->
+                    <path d="M64 10 L64 55 L120 55 L120 10 Z" fill="#FF671F"/>
+                    <!-- Flag wave effect -->
+                    <path d="M64 10 Q92 5 120 10 L120 55 Q92 50 64 55 Z" fill="#FF671F"/>
+                    
+                    <!-- Text: RSS -->
+                    <text x="150" y="45" font-family="Arial Black, sans-serif" font-size="38" font-weight="900" fill="#FF671F">RSS</text>
+                    
+                    <!-- Text: राष्ट्रीय स्वयंसेवक संघ -->
+                    <text x="135" y="85" font-family="'Noto Sans Devanagari', serif" font-size="22" font-weight="700" fill="#E65100">राष्ट्रीय स्वयंसेवक संघ</text>
+                    
+                    <!-- Person silhouette with stick -->
+                    <g transform="translate(340, 15)">
+                        <!-- Head -->
+                        <circle cx="15" cy="8" r="7" fill="#333"/>
+                        <!-- Body -->
+                        <line x1="15" y1="15" x2="15" y2="55" stroke="#333" stroke-width="3"/>
+                        <!-- Arms -->
+                        <line x1="15" y1="30" x2="0" y2="42" stroke="#333" stroke-width="2.5"/>
+                        <line x1="15" y1="30" x2="30" y2="42" stroke="#333" stroke-width="2.5"/>
+                        <!-- Legs -->
+                        <line x1="15" y1="55" x2="5" y2="80" stroke="#333" stroke-width="2.5"/>
+                        <line x1="15" y1="55" x2="25" y2="80" stroke="#333" stroke-width="2.5"/>
+                        <!-- Stick -->
+                        <line x1="30" y1="42" x2="35" y2="0" stroke="#8B4513" stroke-width="2"/>
+                    </g>
+                </svg>
+            </div>
+
+            <h1 class="header-title">युवा व्यवसायी गोष्ठी</h1>
+            <p class="header-subtitle">समाज निर्माण में युवा शक्ति का योगदान</p>
+            <div class="date-badge">
+                <span class="calendar-icon">📅</span>
+                <span>३० अगस्त</span>
+            </div>
+        </div>
+
+        <!-- Decorative Line -->
+        <div class="header-decoration">
+            <div class="line"></div>
+            <div class="center-symbol">🙏</div>
+            <div class="line"></div>
+        </div>
+
+        <!-- Form -->
+        <form id="goshthi-form" class="form-container">
+
+            <!-- Section 1: Personal Details -->
+            <div class="section-header">
+                <span class="section-icon">📋</span>
+                <h2>व्यक्तिगत विवरण</h2>
+            </div>
+
+            <div class="form-group">
+                <label>नाम <span class="required">*</span></label>
+                <input type="text" name="naam" placeholder="अपना पूरा नाम लिखें" required>
+            </div>
+
+            <div class="form-group">
+                <label>पिता का नाम <span class="required">*</span></label>
+                <input type="text" name="pita_naam" placeholder="पिता का नाम लिखें" required>
+            </div>
+
+            <div class="form-group">
+                <label>पत्र व्यवहार का पता <span class="required">*</span></label>
+                <textarea name="pata" placeholder="पूरा पता लिखें (मकान नं., गली, मोहल्ला, शहर, पिनकोड)" required></textarea>
+            </div>
+
+            <!-- Two column row -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>शिक्षा</label>
+                    <input type="text" name="shiksha" placeholder="शैक्षिक योग्यता">
+                </div>
+                <div class="form-group">
+                    <label>व्यवसाय</label>
+                    <input type="text" name="vyavsay" placeholder="व्यवसाय / कार्यक्षेत्र">
+                </div>
+            </div>
+
+            <!-- Section 2: Contact -->
+            <div class="section-header">
+                <span class="section-icon">📞</span>
+                <h2>संपर्क विवरण</h2>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>दूरभाष <span class="required">*</span></label>
+                    <input type="tel" name="mobile" placeholder="मोबाइल नंबर" required pattern="[0-9]{10}" title="10 अंकों का मोबाइल नंबर डालें">
+                </div>
+                <div class="form-group">
+                    <label>ई-पता (Email)</label>
+                    <input type="email" name="email" placeholder="your@email.com">
+                </div>
+            </div>
+
+            <!-- Section 3: Ruchi -->
+            <div class="ruchi-section">
+                <div class="ruchi-title">🌟 रुचि का क्षेत्र 🌟</div>
+                <div class="ruchi-subtitle">आप किन क्षेत्रों में योगदान देना चाहते हैं? (एक या अधिक चुनें)</div>
+
+                <div class="ruchi-grid">
+                    <div class="ruchi-item" onclick="toggleRuchi(this)">
+                        <span class="number">१</span>
+                        <input type="checkbox" name="ruchi" value="कुटुंब प्रबोधन">
+                        <span class="ruchi-label">कुटुंब प्रबोधन</span>
+                        <span class="check-icon">✅</span>
+                    </div>
+                    <div class="ruchi-item" onclick="toggleRuchi(this)">
+                        <span class="number">२</span>
+                        <input type="checkbox" name="ruchi" value="पर्यावरण संरक्षण">
+                        <span class="ruchi-label">पर्यावरण संरक्षण</span>
+                        <span class="check-icon">✅</span>
+                    </div>
+                    <div class="ruchi-item" onclick="toggleRuchi(this)">
+                        <span class="number">३</span>
+                        <input type="checkbox" name="ruchi" value="सामाजिक समरसता">
+                        <span class="ruchi-label">सामाजिक समरसता</span>
+                        <span class="check-icon">✅</span>
+                    </div>
+                    <div class="ruchi-item" onclick="toggleRuchi(this)">
+                        <span class="number">४</span>
+                        <input type="checkbox" name="ruchi" value="गौ सेवा">
+                        <span class="ruchi-label">गौ सेवा</span>
+                        <span class="check-icon">✅</span>
+                    </div>
+                    <div class="ruchi-item" onclick="toggleRuchi(this)">
+                        <span class="number">५</span>
+                        <input type="checkbox" name="ruchi" value="धर्म जागरण">
+                        <span class="ruchi-label">धर्म जागरण</span>
+                        <span class="check-icon">✅</span>
+                    </div>
+                    <div class="ruchi-item" onclick="toggleRuchi(this)">
+                        <span class="number">६</span>
+                        <input type="checkbox" name="ruchi" value="ग्राम विकास">
+                        <span class="ruchi-label">ग्राम विकास</span>
+                        <span class="check-icon">✅</span>
+                    </div>
+                    <div class="ruchi-item" onclick="toggleRuchi(this)">
+                        <span class="number">७</span>
+                        <input type="checkbox" name="ruchi" value="स्व का बोध">
+                        <span class="ruchi-label">स्व का बोध</span>
+                        <span class="check-icon">✅</span>
+                    </div>
+                    <div class="ruchi-item" onclick="toggleRuchi(this)">
+                        <span class="number">८</span>
+                        <input type="checkbox" name="ruchi" value="नागरिक कर्तव्य">
+                        <span class="ruchi-label">नागरिक कर्तव्य</span>
+                        <span class="check-icon">✅</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="submit-section">
+                <button type="submit" class="submit-btn" id="submitBtn">🙏 पंजीकरण करें</button>
+                <div class="spinner" id="spinner"></div>
+            </div>
+        </form>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="tagline">🚩 सेवा ही संगठन | संगठन ही शक्ति 🚩</div>
+            <div class="sub-tagline">युवा व्यवसायी गोष्ठी - ३० अगस्त</div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Overlay -->
+<div class="success-overlay" id="successOverlay">
+    <div class="success-box">
+        <div class="success-icon">🎉</div>
+        <h2>पंजीकरण सफल!</h2>
+        <p>🙏 धन्यवाद! आपका पंजीकरण सफलतापूर्वक हो गया है।<br><br>
+        <strong>युवा व्यवसायी गोष्ठी - ३० अगस्त</strong><br>
+        आपका हार्दिक स्वागत है!</p>
+        <button class="close-btn" onclick="closeSuccess()">ठीक है 🙏</button>
+    </div>
+</div>
+
+<script>
+    // ═══════════════════════════════════════════════════════
+    // IMPORTANT: नीचे अपना Google Apps Script Web App URL डालें
+    // ═══════════════════════════════════════════════════════
+    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE';
+    // ═══════════════════════════════════════════════════════
+
+    // Toggle Ruchi checkbox
+    function toggleRuchi(item) {
+        const checkbox = item.querySelector('input[type="checkbox"]');
+        checkbox.checked = !checkbox.checked;
+        item.classList.toggle('selected', checkbox.checked);
+    }
+
+    // Form Submit
+    document.getElementById('goshthi-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const btn = document.getElementById('submitBtn');
+        const spinner = document.getElementById('spinner');
+
+        // Validate at least one ruchi selected
+        const ruchiChecked = document.querySelectorAll('input[name="ruchi"]:checked');
+        if (ruchiChecked.length === 0) {
+            alert('कृपया कम से कम एक रुचि का क्षेत्र चुनें।');
+            return;
+        }
+
+        // Collect data
+        const formData = new FormData(this);
+        const data = {};
+        data.naam = formData.get('naam');
+        data.pita_naam = formData.get('pita_naam');
+        data.pata = formData.get('pata');
+        data.shiksha = formData.get('shiksha') || '';
+        data.vyavsay = formData.get('vyavsay') || '';
+        data.mobile = formData.get('mobile');
+        data.email = formData.get('email') || '';
+        
+        // Collect all ruchi values
+        const ruchiValues = [];
+        ruchiChecked.forEach(cb => ruchiValues.push(cb.value));
+        data.ruchi = ruchiValues.join(', ');
+
+        data.timestamp = new Date().toLocaleString('hi-IN');
+
+        // Show loading
+        btn.disabled = true;
+        btn.textContent = 'भेज रहे हैं...';
+        spinner.style.display = 'block';
+
+        // Send to Google Sheet
+        if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE') {
+            // Demo mode - no URL set
+            setTimeout(function() {
+                btn.disabled = false;
+                btn.textContent = '🙏 पंजीकरण करें';
+                spinner.style.display = 'none';
+                document.getElementById('successOverlay').classList.add('show');
+                document.getElementById('goshthi-form').reset();
+                // Reset ruchi selections visually
+                document.querySelectorAll('.ruchi-item').forEach(item => item.classList.remove('selected'));
+            }, 1500);
+        } else {
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(() => {
+                btn.disabled = false;
+                btn.textContent = '🙏 पंजीकरण करें';
+                spinner.style.display = 'none';
+                document.getElementById('successOverlay').classList.add('show');
+                document.getElementById('goshthi-form').reset();
+                document.querySelectorAll('.ruchi-item').forEach(item => item.classList.remove('selected'));
+            })
+            .catch(err => {
+                btn.disabled = false;
+                btn.textContent = '🙏 पंजीकरण करें';
+                spinner.style.display = 'none';
+                alert('कुछ समस्या आई। कृपया पुनः प्रयास करें।');
+                console.error(err);
+            });
+        }
+    });
+
+    function closeSuccess() {
+        document.getElementById('successOverlay').classList.remove('show');
+    }
+</script>
+
+</body>
+</html>
