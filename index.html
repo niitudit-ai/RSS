@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>युवा व्यवसायी गोष्ठी - ३० अगस्त | राष्ट्रीय स्वयंसेवक संघ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --saffron: #FF671F;
-            --saffron-dark: #E65100;
+            --saffron-deep: #D84315;
+            --saffron-dark: #BF360C;
+            --saffron-glow: #FF8A50;
             --saffron-light: #FFF3E0;
-            --green-dark: #046A38;
-            --green-light: #E8F5E9;
-            --gold: #D4AF37;
-            --maroon: #800000;
-            --cream: #FFF8E1;
+            --gold: #FFD700;
+            --gold-dark: #C9A800;
+            --cream: #FFFDE7;
+            --maroon: #6D1B1B;
+            --white: #FFFFFF;
         }
 
         * {
@@ -24,219 +26,311 @@
         }
 
         body {
-            font-family: 'Noto Sans Devanagari', 'Tiro Devanagari Hindi', serif;
-            background: var(--cream);
+            font-family: 'Noto Sans Devanagari', sans-serif;
             min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
+            background: #f5f0e8;
+            background-image: 
+                radial-gradient(ellipse at top, rgba(255,103,31,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at bottom, rgba(255,215,0,0.05) 0%, transparent 60%);
         }
 
-        /* Background Pattern */
-        body::before {
+        /* ══════════════════════════════════════
+           HEADER - GRAND RSS BANNER
+           ══════════════════════════════════════ */
+        .grand-header {
+            background: linear-gradient(160deg, #1a0800 0%, #3d0c00 20%, #7a1500 40%, var(--saffron-dark) 60%, var(--saffron-deep) 80%, var(--saffron) 100%);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grand-header::before {
             content: '';
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(255,103,31,0.05) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(255,103,31,0.05) 0%, transparent 50%),
-                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF671F' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(255,215,0,0.1) 0%, transparent 40%),
+                radial-gradient(circle at 85% 30%, rgba(255,103,31,0.15) 0%, transparent 40%);
         }
 
-        .page-wrapper {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 20px 15px;
-        }
-
-        /* ══════════════════════════════════════════
-           TOP DECORATIVE BANNER
-           ══════════════════════════════════════════ */
-        .top-banner {
-            background: linear-gradient(135deg, var(--saffron) 0%, #FF8F00 50%, var(--saffron-dark) 100%);
-            border-radius: 20px 20px 0 0;
+        /* Top Om Bar */
+        .om-bar {
+            background: rgba(0,0,0,0.3);
             padding: 8px;
-            position: relative;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,215,0,0.3);
         }
 
-        .top-banner-inner {
-            border: 2px dashed rgba(255,255,255,0.4);
-            border-radius: 15px 15px 0 0;
-            padding: 5px;
+        .om-bar span {
+            color: var(--gold);
+            font-size: 0.95em;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+
+        /* Main Header Content */
+        .header-content {
+            padding: 35px 30px 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* RSS Flag + Logo Area */
+        .logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .flag-container {
+            position: relative;
+            width: 70px;
+            height: 90px;
+        }
+
+        .flag-pole {
+            position: absolute;
+            left: 8px;
+            top: 0;
+            width: 4px;
+            height: 90px;
+            background: linear-gradient(180deg, #8B4513, #654321, #3e2911);
+            border-radius: 2px;
+        }
+
+        .flag-pole::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -3px;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .flag-cloth {
+            position: absolute;
+            top: 5px;
+            left: 12px;
+            width: 55px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--saffron), var(--saffron-glow), var(--saffron));
+            border-radius: 0 3px 3px 0;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            animation: flagWave 3s ease-in-out infinite;
+        }
+
+        @keyframes flagWave {
+            0%, 100% { transform: skewY(0deg); }
+            25% { transform: skewY(-2deg); }
+            75% { transform: skewY(2deg); }
+        }
+
+        .rss-text-block {
             text-align: center;
         }
 
-        .top-banner .om-text {
-            color: rgba(255,255,255,0.9);
-            font-size: 1.2em;
+        .rss-english {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            font-weight: 900;
+            color: var(--saffron-glow);
             letter-spacing: 8px;
+            text-shadow: 0 2px 10px rgba(255,103,31,0.5), 0 0 40px rgba(255,103,31,0.2);
+            line-height: 1;
         }
 
-        /* ══════════════════════════════════════════
-           MAIN CONTAINER
-           ══════════════════════════════════════════ */
-        .container {
-            background: #ffffff;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 
-                0 25px 80px rgba(230,81,0,0.15),
-                0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* ══════════════════════════════════════════
-           HEADER SECTION WITH LOGO
-           ══════════════════════════════════════════ */
-        .header {
-            background: linear-gradient(180deg, #ffffff 0%, var(--saffron-light) 100%);
-            padding: 30px 30px 20px;
-            text-align: center;
-            position: relative;
-            border-bottom: 3px solid var(--saffron);
-        }
-
-        /* RSS Logo SVG */
-        .rss-logo-container {
-            margin-bottom: 15px;
-        }
-
-        .rss-logo {
-            width: 280px;
-            height: auto;
-        }
-
-        /* RSS Flag SVG */
-        .rss-flag {
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .header-title {
-            font-size: 2.2em;
-            color: var(--saffron-dark);
-            font-weight: 800;
-            margin: 10px 0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-
-        .header-subtitle {
+        .rss-hindi {
             font-size: 1.1em;
-            color: #555;
-            margin-bottom: 15px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-top: 4px;
+        }
+
+        /* Person with stick silhouette */
+        .person-silhouette {
+            width: 45px;
+            height: 80px;
+            position: relative;
+        }
+
+        .person-silhouette svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Event Title */
+        .event-section {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,215,0,0.3);
+        }
+
+        .event-title {
+            font-size: 2.4em;
+            font-weight: 900;
+            color: var(--white);
+            text-shadow: 0 3px 15px rgba(0,0,0,0.4);
+            margin-bottom: 8px;
+        }
+
+        .event-subtitle {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.05em;
+            font-weight: 400;
+            margin-bottom: 18px;
         }
 
         .date-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, var(--saffron-dark), var(--saffron));
-            color: #fff;
-            padding: 10px 30px;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: #3d0c00;
+            padding: 12px 35px;
             border-radius: 50px;
             font-size: 1.3em;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(230,81,0,0.3);
+            font-weight: 800;
+            box-shadow: 0 5px 20px rgba(255,215,0,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
         }
 
-        .date-badge .calendar-icon {
-            font-size: 1.2em;
+        .date-badge .icon {
+            font-size: 1.1em;
         }
 
-        /* Decorative line under header */
-        .header-decoration {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 40px;
-            background: #fff;
+        /* Decorative bottom wave */
+        .header-wave {
+            position: relative;
+            height: 40px;
+            background: linear-gradient(180deg, transparent, #f5f0e8);
+            margin-top: -1px;
         }
 
-        .header-decoration .line {
-            flex: 1;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+        .header-wave::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: #f5f0e8;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
         }
 
-        .header-decoration .center-symbol {
+        /* ══════════════════════════════════════
+           FORM CONTAINER
+           ══════════════════════════════════════ */
+        .form-wrapper {
+            max-width: 780px;
+            margin: -10px auto 30px;
             padding: 0 15px;
-            color: var(--saffron);
-            font-size: 1.8em;
+            position: relative;
+            z-index: 5;
         }
 
-        /* ══════════════════════════════════════════
-           FORM SECTIONS
-           ══════════════════════════════════════════ */
-        .form-container {
-            padding: 10px 40px 30px;
+        .form-card {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.08),
+                0 5px 20px rgba(255,103,31,0.08);
+            overflow: hidden;
+            border: 1px solid rgba(255,103,31,0.1);
         }
 
-        .section-header {
+        /* Section Headers */
+        .section-divider {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin: 25px 0 20px;
-            padding: 12px 20px;
-            background: linear-gradient(135deg, var(--saffron-light), #fff);
-            border-radius: 12px;
-            border-left: 4px solid var(--saffron);
+            padding: 16px 30px;
+            background: linear-gradient(135deg, var(--saffron-light), #FFFDE7);
+            border-bottom: 1px solid rgba(255,103,31,0.15);
+            border-top: 1px solid rgba(255,103,31,0.15);
         }
 
-        .section-header .section-icon {
-            font-size: 1.4em;
+        .section-divider .s-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--saffron), var(--saffron-deep));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            box-shadow: 0 3px 10px rgba(255,103,31,0.3);
         }
 
-        .section-header h2 {
-            font-size: 1.2em;
+        .section-divider h2 {
+            font-size: 1.15em;
             color: var(--saffron-dark);
             font-weight: 700;
         }
 
         /* Form Fields */
+        .fields-container {
+            padding: 25px 30px;
+        }
+
         .form-group {
-            margin-bottom: 20px;
-            position: relative;
+            margin-bottom: 22px;
         }
 
         .form-group label {
-            display: block;
-            font-size: 1.05em;
-            color: #333;
-            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.95em;
+            color: #444;
+            margin-bottom: 8px;
             font-weight: 600;
         }
 
-        .form-group label .required {
+        .form-group label .req {
             color: #d32f2f;
-            font-weight: 700;
+            font-size: 1.2em;
+            line-height: 1;
+        }
+
+        .form-group label .field-icon {
+            font-size: 1em;
+            opacity: 0.7;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 13px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
+            padding: 14px 18px;
+            border: 2px solid #eee;
+            border-radius: 12px;
             font-size: 1em;
-            font-family: 'Noto Sans Devanagari', serif;
-            transition: all 0.3s ease;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             background: #fafafa;
+            color: #333;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--saffron);
-            background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(255,103,31,0.1);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(255,103,31,0.08), 0 4px 12px rgba(255,103,31,0.1);
+            transform: translateY(-1px);
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: #aaa;
+            color: #bbb;
+            font-weight: 400;
         }
 
         .form-group textarea {
@@ -244,48 +338,35 @@
             min-height: 90px;
         }
 
-        /* Two column layout for some fields */
-        .form-row {
+        /* Two-column */
+        .row-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 18px;
         }
 
-        /* ══════════════════════════════════════════
-           RUCHI / INTEREST SECTION
-           ══════════════════════════════════════════ */
-        .ruchi-section {
-            background: linear-gradient(135deg, var(--saffron-light) 0%, #FFF9C4 50%, var(--saffron-light) 100%);
-            border-radius: 16px;
-            padding: 25px;
-            margin: 30px 0;
-            border: 2px solid rgba(255,103,31,0.2);
-            position: relative;
-            overflow: hidden;
+        /* ══════════════════════════════════════
+           RUCHI SECTION - PREMIUM CARDS
+           ══════════════════════════════════════ */
+        .ruchi-container {
+            padding: 25px 30px 30px;
         }
 
-        .ruchi-section::before {
-            content: '🙏';
-            position: absolute;
-            top: -5px;
-            right: 15px;
-            font-size: 2em;
-            opacity: 0.2;
-        }
-
-        .ruchi-title {
+        .ruchi-header {
             text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .ruchi-header h3 {
             font-size: 1.3em;
             color: var(--saffron-dark);
             font-weight: 800;
-            margin-bottom: 8px;
         }
 
-        .ruchi-subtitle {
-            text-align: center;
-            color: #666;
+        .ruchi-header p {
+            color: #888;
             font-size: 0.9em;
-            margin-bottom: 20px;
+            margin-top: 4px;
         }
 
         .ruchi-grid {
@@ -294,36 +375,58 @@
             gap: 12px;
         }
 
-        .ruchi-item {
+        .ruchi-card {
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 14px 16px;
-            background: #ffffff;
-            border-radius: 12px;
-            border: 2px solid #ffe0b2;
-            transition: all 0.3s ease;
+            padding: 15px 16px;
+            background: linear-gradient(135deg, #fff, #fffdf5);
+            border-radius: 14px;
+            border: 2px solid #f0e8d8;
             cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             user-select: none;
+            position: relative;
+            overflow: hidden;
         }
 
-        .ruchi-item:hover {
+        .ruchi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,103,31,0.05), rgba(255,215,0,0.05));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .ruchi-card:hover {
+            border-color: var(--saffron-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,103,31,0.15);
+        }
+
+        .ruchi-card:hover::before {
+            opacity: 1;
+        }
+
+        .ruchi-card.active {
             border-color: var(--saffron);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255,103,31,0.15);
+            background: linear-gradient(135deg, var(--saffron-light), #FFF9C4);
+            box-shadow: 0 4px 15px rgba(255,103,31,0.2);
         }
 
-        .ruchi-item.selected {
-            border-color: var(--saffron);
-            background: var(--saffron-light);
-            box-shadow: 0 4px 12px rgba(255,103,31,0.2);
+        .ruchi-card.active::before {
+            opacity: 1;
         }
 
-        .ruchi-item .number {
-            background: linear-gradient(135deg, var(--saffron-dark), var(--saffron));
+        .ruchi-card .num {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--saffron-deep), var(--saffron));
             color: #fff;
-            width: 30px;
-            height: 30px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -331,207 +434,254 @@
             font-size: 0.85em;
             font-weight: 800;
             flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(255,103,31,0.3);
         }
 
-        .ruchi-item input[type="checkbox"] {
-            display: none;
-        }
-
-        .ruchi-item .ruchi-label {
-            font-size: 0.95em;
+        .ruchi-card .ruchi-name {
+            font-size: 0.92em;
             color: #333;
             font-weight: 600;
+            flex: 1;
         }
 
-        .ruchi-item .check-icon {
-            margin-left: auto;
-            font-size: 1.2em;
+        .ruchi-card .tick {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .ruchi-card.active .tick {
+            background: var(--saffron);
+            border-color: var(--saffron);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(255,103,31,0.3);
+        }
+
+        .ruchi-card .tick svg {
+            width: 14px;
+            height: 14px;
             opacity: 0;
             transition: opacity 0.3s;
         }
 
-        .ruchi-item.selected .check-icon {
+        .ruchi-card.active .tick svg {
             opacity: 1;
         }
 
-        /* ══════════════════════════════════════════
+        .ruchi-card input {
+            display: none;
+        }
+
+        /* ══════════════════════════════════════
            SUBMIT BUTTON
-           ══════════════════════════════════════════ */
-        .submit-section {
+           ══════════════════════════════════════ */
+        .submit-area {
+            padding: 10px 30px 35px;
             text-align: center;
-            padding: 20px 0 10px;
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, var(--saffron-dark) 0%, var(--saffron) 100%);
-            color: #ffffff;
+            background: linear-gradient(135deg, var(--saffron-dark) 0%, var(--saffron-deep) 40%, var(--saffron) 100%);
+            color: #fff;
             border: none;
-            padding: 16px 60px;
-            font-size: 1.3em;
-            font-family: 'Noto Sans Devanagari', serif;
+            padding: 16px 55px;
+            font-size: 1.25em;
+            font-family: 'Noto Sans Devanagari', sans-serif;
             font-weight: 700;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 25px rgba(230,81,0,0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 6px 25px rgba(191,54,12,0.4);
             position: relative;
             overflow: hidden;
+            letter-spacing: 1px;
         }
 
-        .submit-btn::before {
+        .submit-btn::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.15), transparent);
+            transform: rotate(45deg) translateX(-100%);
+            transition: transform 0.6s;
         }
 
-        .submit-btn:hover::before {
-            left: 100%;
+        .submit-btn:hover::after {
+            transform: rotate(45deg) translateX(100%);
         }
 
         .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 35px rgba(230,81,0,0.5);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 35px rgba(191,54,12,0.5);
         }
 
         .submit-btn:active {
-            transform: translateY(0);
+            transform: translateY(0) scale(0.98);
         }
 
         .submit-btn:disabled {
-            background: #ccc;
+            background: #bbb;
             box-shadow: none;
             cursor: not-allowed;
             transform: none;
         }
 
-        /* ══════════════════════════════════════════
-           FOOTER
-           ══════════════════════════════════════════ */
-        .footer {
-            text-align: center;
-            padding: 20px 30px;
-            background: linear-gradient(180deg, #fff, var(--saffron-light));
-            border-top: 2px solid #ffe0b2;
+        .spinner {
+            display: none;
+            margin: 12px auto 0;
+            width: 28px;
+            height: 28px;
+            border: 3px solid #f0e0d0;
+            border-top: 3px solid var(--saffron);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
         }
 
-        .footer .tagline {
-            color: var(--saffron-dark);
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ══════════════════════════════════════
+           FOOTER
+           ══════════════════════════════════════ */
+        .form-footer {
+            background: linear-gradient(135deg, #3d0c00, #1a0800);
+            padding: 20px 30px;
+            text-align: center;
+        }
+
+        .form-footer .slogan {
+            color: var(--gold);
             font-size: 1.1em;
             font-weight: 700;
-            margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
-        .footer .sub-tagline {
-            color: #888;
-            font-size: 0.85em;
+        .form-footer .sub {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8em;
+            margin-top: 5px;
         }
 
-        /* ══════════════════════════════════════════
-           SUCCESS MESSAGE
-           ══════════════════════════════════════════ */
-        .success-overlay {
+        /* ══════════════════════════════════════
+           SUCCESS POPUP
+           ══════════════════════════════════════ */
+        .overlay {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.6);
-            z-index: 1000;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
             align-items: center;
             justify-content: center;
             padding: 20px;
         }
 
-        .success-overlay.show {
+        .overlay.show {
             display: flex;
         }
 
-        .success-box {
+        .success-card {
             background: #fff;
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 24px;
+            padding: 45px 35px;
             text-align: center;
-            max-width: 450px;
+            max-width: 420px;
             width: 100%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            animation: popIn 0.4s ease;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
-        @keyframes popIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        @keyframes bounceIn {
+            from { transform: scale(0.7) translateY(30px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
         }
 
-        .success-box .success-icon {
-            font-size: 4em;
+        .success-card .big-icon {
+            font-size: 4.5em;
             margin-bottom: 15px;
+            animation: pulse 1.5s ease-in-out infinite;
         }
 
-        .success-box h2 {
-            color: var(--green-dark);
-            font-size: 1.5em;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .success-card h2 {
+            font-size: 1.6em;
+            color: var(--saffron-dark);
             margin-bottom: 10px;
+            font-weight: 800;
         }
 
-        .success-box p {
+        .success-card p {
             color: #555;
             font-size: 1em;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        .success-box .close-btn {
-            margin-top: 20px;
-            padding: 10px 30px;
-            background: var(--saffron);
+        .success-card .ok-btn {
+            margin-top: 25px;
+            padding: 12px 40px;
+            background: linear-gradient(135deg, var(--saffron-deep), var(--saffron));
             color: #fff;
             border: none;
-            border-radius: 30px;
-            font-size: 1em;
-            font-family: 'Noto Sans Devanagari', serif;
+            border-radius: 50px;
+            font-size: 1.05em;
+            font-weight: 700;
+            font-family: 'Noto Sans Devanagari', sans-serif;
             cursor: pointer;
-            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255,103,31,0.3);
+            transition: transform 0.2s;
         }
 
-        /* Loading spinner */
-        .spinner {
-            display: none;
-            margin: 10px auto;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid var(--saffron);
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
+        .success-card .ok-btn:hover {
+            transform: scale(1.05);
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* ══════════════════════════════════════════
+        /* ══════════════════════════════════════
            RESPONSIVE
-           ══════════════════════════════════════════ */
-        @media (max-width: 650px) {
-            .page-wrapper {
-                padding: 10px 8px;
+           ══════════════════════════════════════ */
+        @media (max-width: 600px) {
+            .logo-area {
+                gap: 12px;
             }
 
-            .form-container {
-                padding: 10px 20px 25px;
+            .rss-english {
+                font-size: 2em;
+                letter-spacing: 5px;
             }
 
-            .header-title {
-                font-size: 1.6em;
+            .rss-hindi {
+                font-size: 0.9em;
             }
 
-            .form-row {
+            .event-title {
+                font-size: 1.7em;
+            }
+
+            .date-badge {
+                font-size: 1.1em;
+                padding: 10px 25px;
+            }
+
+            .fields-container, .ruchi-container, .submit-area {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .row-2 {
                 grid-template-columns: 1fr;
                 gap: 0;
             }
@@ -540,322 +690,310 @@
                 grid-template-columns: 1fr;
             }
 
-            .date-badge {
-                font-size: 1.1em;
-                padding: 8px 20px;
+            .flag-container {
+                width: 50px;
+                height: 70px;
+            }
+
+            .flag-cloth {
+                width: 40px;
+                height: 28px;
+            }
+
+            .flag-pole {
+                height: 70px;
+            }
+
+            .person-silhouette {
+                width: 30px;
+                height: 60px;
+            }
+
+            .form-wrapper {
+                padding: 0 8px;
             }
 
             .submit-btn {
                 padding: 14px 40px;
                 font-size: 1.1em;
             }
-
-            .rss-logo {
-                width: 200px;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .form-group, .ruchi-item {
-            animation: fadeInUp 0.5s ease forwards;
         }
     </style>
 </head>
 <body>
 
-<!-- Top Decorative Banner -->
-<div class="page-wrapper">
-    <div class="top-banner">
-        <div class="top-banner-inner">
-            <span class="om-text">॥ ॐ ॥ राष्ट्राय स्वाहा ॥ ॐ ॥</span>
-        </div>
+<!-- ═══════ GRAND HEADER ═══════ -->
+<header class="grand-header">
+    <div class="om-bar">
+        <span>॥ ॐ ॥ नमस्ते सदा वत्सले मातृभूमे ॥ ॐ ॥</span>
     </div>
+    <div class="header-content">
+        <div class="logo-area">
+            <!-- Flag -->
+            <div class="flag-container">
+                <div class="flag-pole"></div>
+                <div class="flag-cloth"></div>
+            </div>
 
-    <div class="container">
-        <!-- Header with Logo -->
-        <div class="header">
-            <div class="rss-logo-container">
-                <!-- RSS Logo - SVG -->
-                <svg class="rss-logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Flag pole -->
-                    <rect x="60" y="10" width="4" height="100" fill="#8B4513"/>
-                    <!-- Saffron flag -->
-                    <path d="M64 10 L64 55 L120 55 L120 10 Z" fill="#FF671F"/>
-                    <!-- Flag wave effect -->
-                    <path d="M64 10 Q92 5 120 10 L120 55 Q92 50 64 55 Z" fill="#FF671F"/>
-                    
-                    <!-- Text: RSS -->
-                    <text x="150" y="45" font-family="Arial Black, sans-serif" font-size="38" font-weight="900" fill="#FF671F">RSS</text>
-                    
-                    <!-- Text: राष्ट्रीय स्वयंसेवक संघ -->
-                    <text x="135" y="85" font-family="'Noto Sans Devanagari', serif" font-size="22" font-weight="700" fill="#E65100">राष्ट्रीय स्वयंसेवक संघ</text>
-                    
-                    <!-- Person silhouette with stick -->
-                    <g transform="translate(340, 15)">
-                        <!-- Head -->
-                        <circle cx="15" cy="8" r="7" fill="#333"/>
-                        <!-- Body -->
-                        <line x1="15" y1="15" x2="15" y2="55" stroke="#333" stroke-width="3"/>
-                        <!-- Arms -->
-                        <line x1="15" y1="30" x2="0" y2="42" stroke="#333" stroke-width="2.5"/>
-                        <line x1="15" y1="30" x2="30" y2="42" stroke="#333" stroke-width="2.5"/>
-                        <!-- Legs -->
-                        <line x1="15" y1="55" x2="5" y2="80" stroke="#333" stroke-width="2.5"/>
-                        <line x1="15" y1="55" x2="25" y2="80" stroke="#333" stroke-width="2.5"/>
-                        <!-- Stick -->
-                        <line x1="30" y1="42" x2="35" y2="0" stroke="#8B4513" stroke-width="2"/>
-                    </g>
+            <!-- RSS Text -->
+            <div class="rss-text-block">
+                <div class="rss-english">RSS</div>
+                <div class="rss-hindi">राष्ट्रीय स्वयंसेवक संघ</div>
+            </div>
+
+            <!-- Person silhouette -->
+            <div class="person-silhouette">
+                <svg viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="8" r="7" fill="rgba(255,255,255,0.8)"/>
+                    <line x1="20" y1="15" x2="20" y2="48" stroke="rgba(255,255,255,0.8)" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="20" y1="28" x2="8" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="20" y1="28" x2="32" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="20" y1="48" x2="10" y2="72" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="20" y1="48" x2="30" y2="72" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="32" y1="40" x2="36" y2="2" stroke="#C9A800" stroke-width="2" stroke-linecap="round"/>
                 </svg>
             </div>
+        </div>
 
-            <h1 class="header-title">युवा व्यवसायी गोष्ठी</h1>
-            <p class="header-subtitle">समाज निर्माण में युवा शक्ति का योगदान</p>
+        <div class="event-section">
+            <h1 class="event-title">युवा व्यवसायी गोष्ठी</h1>
+            <p class="event-subtitle">समाज सेवा में युवा शक्ति का संकल्प</p>
             <div class="date-badge">
-                <span class="calendar-icon">📅</span>
-                <span>३० अगस्त</span>
+                <span class="icon">📅</span>
+                <span>दिनांक : ३० अगस्त</span>
             </div>
         </div>
+    </div>
+</header>
+<div class="header-wave"></div>
 
-        <!-- Decorative Line -->
-        <div class="header-decoration">
-            <div class="line"></div>
-            <div class="center-symbol">🙏</div>
-            <div class="line"></div>
+<!-- ═══════ FORM ═══════ -->
+<div class="form-wrapper">
+    <form id="goshthi-form" class="form-card">
+
+        <!-- Section: Personal -->
+        <div class="section-divider">
+            <div class="s-icon">👤</div>
+            <h2>व्यक्तिगत विवरण</h2>
         </div>
 
-        <!-- Form -->
-        <form id="goshthi-form" class="form-container">
-
-            <!-- Section 1: Personal Details -->
-            <div class="section-header">
-                <span class="section-icon">📋</span>
-                <h2>व्यक्तिगत विवरण</h2>
-            </div>
-
+        <div class="fields-container">
             <div class="form-group">
-                <label>नाम <span class="required">*</span></label>
+                <label><span class="field-icon">✍️</span> नाम <span class="req">*</span></label>
                 <input type="text" name="naam" placeholder="अपना पूरा नाम लिखें" required>
             </div>
 
             <div class="form-group">
-                <label>पिता का नाम <span class="required">*</span></label>
-                <input type="text" name="pita_naam" placeholder="पिता का नाम लिखें" required>
+                <label><span class="field-icon">👨</span> पिता का नाम <span class="req">*</span></label>
+                <input type="text" name="pita_naam" placeholder="पिता का नाम" required>
             </div>
 
             <div class="form-group">
-                <label>पत्र व्यवहार का पता <span class="required">*</span></label>
-                <textarea name="pata" placeholder="पूरा पता लिखें (मकान नं., गली, मोहल्ला, शहर, पिनकोड)" required></textarea>
+                <label><span class="field-icon">🏠</span> पत्र व्यवहार का पता <span class="req">*</span></label>
+                <textarea name="pata" placeholder="पूरा पता — मकान नं., गली, मोहल्ला, शहर, जिला, पिनकोड" required></textarea>
             </div>
 
-            <!-- Two column row -->
-            <div class="form-row">
+            <div class="row-2">
                 <div class="form-group">
-                    <label>शिक्षा</label>
+                    <label><span class="field-icon">🎓</span> शिक्षा</label>
                     <input type="text" name="shiksha" placeholder="शैक्षिक योग्यता">
                 </div>
                 <div class="form-group">
-                    <label>व्यवसाय</label>
+                    <label><span class="field-icon">💼</span> व्यवसाय</label>
                     <input type="text" name="vyavsay" placeholder="व्यवसाय / कार्यक्षेत्र">
                 </div>
             </div>
+        </div>
 
-            <!-- Section 2: Contact -->
-            <div class="section-header">
-                <span class="section-icon">📞</span>
-                <h2>संपर्क विवरण</h2>
+        <!-- Section: Contact -->
+        <div class="section-divider">
+            <div class="s-icon">📞</div>
+            <h2>संपर्क</h2>
+        </div>
+
+        <div class="fields-container">
+            <div class="form-group">
+                <label><span class="field-icon">📱</span> दूरभाष (मोबाइल नंबर) <span class="req">*</span></label>
+                <input type="tel" name="mobile" placeholder="10 अंकों का मोबाइल नंबर" required pattern="[0-9]{10}" title="कृपया 10 अंकों का सही मोबाइल नंबर डालें">
+            </div>
+        </div>
+
+        <!-- Section: Ruchi -->
+        <div class="section-divider">
+            <div class="s-icon">🎯</div>
+            <h2>रुचि का क्षेत्र</h2>
+        </div>
+
+        <div class="ruchi-container">
+            <div class="ruchi-header">
+                <h3>आप किन क्षेत्रों में योगदान देना चाहते हैं?</h3>
+                <p>(एक या अधिक चुनें)</p>
             </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label>दूरभाष <span class="required">*</span></label>
-                    <input type="tel" name="mobile" placeholder="मोबाइल नंबर" required pattern="[0-9]{10}" title="10 अंकों का मोबाइल नंबर डालें">
+            <div class="ruchi-grid">
+                <div class="ruchi-card" onclick="selectRuchi(this)">
+                    <span class="num">१</span>
+                    <input type="checkbox" name="ruchi" value="कुटुंब प्रबोधन">
+                    <span class="ruchi-name">कुटुंब प्रबोधन</span>
+                    <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
                 </div>
-                <div class="form-group">
-                    <label>ई-पता (Email)</label>
-                    <input type="email" name="email" placeholder="your@email.com">
+                <div class="ruchi-card" onclick="selectRuchi(this)">
+                    <span class="num">२</span>
+                    <input type="checkbox" name="ruchi" value="पर्यावरण संरक्षण">
+                    <span class="ruchi-name">पर्यावरण संरक्षण</span>
+                    <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
+                </div>
+                <div class="ruchi-card" onclick="selectRuchi(this)">
+                    <span class="num">३</span>
+                    <input type="checkbox" name="ruchi" value="सामाजिक समरसता">
+                    <span class="ruchi-name">सामाजिक समरसता</span>
+                    <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
+                </div>
+                <div class="ruchi-card" onclick="selectRuchi(this)">
+                    <span class="num">४</span>
+                    <input type="checkbox" name="ruchi" value="गौ सेवा">
+                    <span class="ruchi-name">गौ सेवा</span>
+                    <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
+                </div>
+                <div class="ruchi-card" onclick="selectRuchi(this)">
+                    <span class="num">५</span>
+                    <input type="checkbox" name="ruchi" value="धर्म जागरण">
+                    <span class="ruchi-name">धर्म जागरण</span>
+                    <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
+                </div>
+                <div class="ruchi-card" onclick="selectRuchi(this)">
+                    <span class="num">६</span>
+                    <input type="checkbox" name="ruchi" value="ग्राम विकास">
+                    <span class="ruchi-name">ग्राम विकास</span>
+                    <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
+                </div>
+                <div class="ruchi-card" onclick="selectRuchi(this)">
+                    <span class="num">७</span>
+                    <input type="checkbox" name="ruchi" value="स्व का बोध">
+                    <span class="ruchi-name">स्व का बोध</span>
+                    <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
+                </div>
+                <div class="ruchi-card" onclick="selectRuchi(this)">
+                    <span class="num">८</span>
+                    <input type="checkbox" name="ruchi" value="नागरिक कर्तव्य">
+                    <span class="ruchi-name">नागरिक कर्तव्य</span>
+                    <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
                 </div>
             </div>
+        </div>
 
-            <!-- Section 3: Ruchi -->
-            <div class="ruchi-section">
-                <div class="ruchi-title">🌟 रुचि का क्षेत्र 🌟</div>
-                <div class="ruchi-subtitle">आप किन क्षेत्रों में योगदान देना चाहते हैं? (एक या अधिक चुनें)</div>
-
-                <div class="ruchi-grid">
-                    <div class="ruchi-item" onclick="toggleRuchi(this)">
-                        <span class="number">१</span>
-                        <input type="checkbox" name="ruchi" value="कुटुंब प्रबोधन">
-                        <span class="ruchi-label">कुटुंब प्रबोधन</span>
-                        <span class="check-icon">✅</span>
-                    </div>
-                    <div class="ruchi-item" onclick="toggleRuchi(this)">
-                        <span class="number">२</span>
-                        <input type="checkbox" name="ruchi" value="पर्यावरण संरक्षण">
-                        <span class="ruchi-label">पर्यावरण संरक्षण</span>
-                        <span class="check-icon">✅</span>
-                    </div>
-                    <div class="ruchi-item" onclick="toggleRuchi(this)">
-                        <span class="number">३</span>
-                        <input type="checkbox" name="ruchi" value="सामाजिक समरसता">
-                        <span class="ruchi-label">सामाजिक समरसता</span>
-                        <span class="check-icon">✅</span>
-                    </div>
-                    <div class="ruchi-item" onclick="toggleRuchi(this)">
-                        <span class="number">४</span>
-                        <input type="checkbox" name="ruchi" value="गौ सेवा">
-                        <span class="ruchi-label">गौ सेवा</span>
-                        <span class="check-icon">✅</span>
-                    </div>
-                    <div class="ruchi-item" onclick="toggleRuchi(this)">
-                        <span class="number">५</span>
-                        <input type="checkbox" name="ruchi" value="धर्म जागरण">
-                        <span class="ruchi-label">धर्म जागरण</span>
-                        <span class="check-icon">✅</span>
-                    </div>
-                    <div class="ruchi-item" onclick="toggleRuchi(this)">
-                        <span class="number">६</span>
-                        <input type="checkbox" name="ruchi" value="ग्राम विकास">
-                        <span class="ruchi-label">ग्राम विकास</span>
-                        <span class="check-icon">✅</span>
-                    </div>
-                    <div class="ruchi-item" onclick="toggleRuchi(this)">
-                        <span class="number">७</span>
-                        <input type="checkbox" name="ruchi" value="स्व का बोध">
-                        <span class="ruchi-label">स्व का बोध</span>
-                        <span class="check-icon">✅</span>
-                    </div>
-                    <div class="ruchi-item" onclick="toggleRuchi(this)">
-                        <span class="number">८</span>
-                        <input type="checkbox" name="ruchi" value="नागरिक कर्तव्य">
-                        <span class="ruchi-label">नागरिक कर्तव्य</span>
-                        <span class="check-icon">✅</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Submit -->
-            <div class="submit-section">
-                <button type="submit" class="submit-btn" id="submitBtn">🙏 पंजीकरण करें</button>
-                <div class="spinner" id="spinner"></div>
-            </div>
-        </form>
+        <!-- Submit -->
+        <div class="submit-area">
+            <button type="submit" class="submit-btn" id="submitBtn">🙏 पंजीकरण करें</button>
+            <div class="spinner" id="spinner"></div>
+        </div>
 
         <!-- Footer -->
-        <div class="footer">
-            <div class="tagline">🚩 सेवा ही संगठन | संगठन ही शक्ति 🚩</div>
-            <div class="sub-tagline">युवा व्यवसायी गोष्ठी - ३० अगस्त</div>
+        <div class="form-footer">
+            <div class="slogan">🚩 परम वैभवं नेतुमेतत् स्वराष्ट्रम् 🚩</div>
+            <div class="sub">युवा व्यवसायी गोष्ठी — ३० अगस्त</div>
         </div>
-    </div>
+    </form>
 </div>
 
-<!-- Success Overlay -->
-<div class="success-overlay" id="successOverlay">
-    <div class="success-box">
-        <div class="success-icon">🎉</div>
-        <h2>पंजीकरण सफल!</h2>
-        <p>🙏 धन्यवाद! आपका पंजीकरण सफलतापूर्वक हो गया है।<br><br>
-        <strong>युवा व्यवसायी गोष्ठी - ३० अगस्त</strong><br>
-        आपका हार्दिक स्वागत है!</p>
-        <button class="close-btn" onclick="closeSuccess()">ठीक है 🙏</button>
+<!-- Success Popup -->
+<div class="overlay" id="overlay">
+    <div class="success-card">
+        <div class="big-icon">🎉</div>
+        <h2>पंजीकरण सफल! 🙏</h2>
+        <p>आपका पंजीकरण सफलतापूर्वक हो गया है।<br><br>
+        <strong>युवा व्यवसायी गोष्ठी</strong><br>
+        ३० अगस्त को आपका हार्दिक स्वागत है।<br><br>
+        🚩 राष्ट्र सेवा में आपका योगदान अमूल्य है!</p>
+        <button class="ok-btn" onclick="closePopup()">धन्यवाद 🙏</button>
     </div>
 </div>
 
 <script>
-    // ═══════════════════════════════════════════════════════
-    // IMPORTANT: नीचे अपना Google Apps Script Web App URL डालें
-    // ═══════════════════════════════════════════════════════
-    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE';
-    // ═══════════════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// Google Sheet URL - यहाँ अपना URL डालें
+// ═══════════════════════════════════════════
+const SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE';
+// ═══════════════════════════════════════════
 
-    // Toggle Ruchi checkbox
-    function toggleRuchi(item) {
-        const checkbox = item.querySelector('input[type="checkbox"]');
-        checkbox.checked = !checkbox.checked;
-        item.classList.toggle('selected', checkbox.checked);
+function selectRuchi(card) {
+    const cb = card.querySelector('input[type="checkbox"]');
+    cb.checked = !cb.checked;
+    card.classList.toggle('active', cb.checked);
+}
+
+document.getElementById('goshthi-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const btn = document.getElementById('submitBtn');
+    const spinner = document.getElementById('spinner');
+
+    // Check ruchi
+    const checked = document.querySelectorAll('input[name="ruchi"]:checked');
+    if (checked.length === 0) {
+        alert('कृपया कम से कम एक रुचि का क्षेत्र चुनें।');
+        return;
     }
 
-    // Form Submit
-    document.getElementById('goshthi-form').addEventListener('submit', function(e) {
-        e.preventDefault();
+    // Gather data
+    const fd = new FormData(this);
+    const data = {
+        naam: fd.get('naam'),
+        pita_naam: fd.get('pita_naam'),
+        pata: fd.get('pata'),
+        shiksha: fd.get('shiksha') || '',
+        vyavsay: fd.get('vyavsay') || '',
+        mobile: fd.get('mobile'),
+        ruchi: Array.from(checked).map(c => c.value).join(', '),
+        timestamp: new Date().toLocaleString('hi-IN')
+    };
 
-        const btn = document.getElementById('submitBtn');
-        const spinner = document.getElementById('spinner');
+    // Loading state
+    btn.disabled = true;
+    btn.textContent = 'भेज रहे हैं...';
+    spinner.style.display = 'block';
 
-        // Validate at least one ruchi selected
-        const ruchiChecked = document.querySelectorAll('input[name="ruchi"]:checked');
-        if (ruchiChecked.length === 0) {
-            alert('कृपया कम से कम एक रुचि का क्षेत्र चुनें।');
-            return;
-        }
-
-        // Collect data
-        const formData = new FormData(this);
-        const data = {};
-        data.naam = formData.get('naam');
-        data.pita_naam = formData.get('pita_naam');
-        data.pata = formData.get('pata');
-        data.shiksha = formData.get('shiksha') || '';
-        data.vyavsay = formData.get('vyavsay') || '';
-        data.mobile = formData.get('mobile');
-        data.email = formData.get('email') || '';
-        
-        // Collect all ruchi values
-        const ruchiValues = [];
-        ruchiChecked.forEach(cb => ruchiValues.push(cb.value));
-        data.ruchi = ruchiValues.join(', ');
-
-        data.timestamp = new Date().toLocaleString('hi-IN');
-
-        // Show loading
-        btn.disabled = true;
-        btn.textContent = 'भेज रहे हैं...';
-        spinner.style.display = 'block';
-
-        // Send to Google Sheet
-        if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE') {
-            // Demo mode - no URL set
-            setTimeout(function() {
-                btn.disabled = false;
-                btn.textContent = '🙏 पंजीकरण करें';
-                spinner.style.display = 'none';
-                document.getElementById('successOverlay').classList.add('show');
-                document.getElementById('goshthi-form').reset();
-                // Reset ruchi selections visually
-                document.querySelectorAll('.ruchi-item').forEach(item => item.classList.remove('selected'));
-            }, 1500);
-        } else {
-            fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-            .then(() => {
-                btn.disabled = false;
-                btn.textContent = '🙏 पंजीकरण करें';
-                spinner.style.display = 'none';
-                document.getElementById('successOverlay').classList.add('show');
-                document.getElementById('goshthi-form').reset();
-                document.querySelectorAll('.ruchi-item').forEach(item => item.classList.remove('selected'));
-            })
-            .catch(err => {
-                btn.disabled = false;
-                btn.textContent = '🙏 पंजीकरण करें';
-                spinner.style.display = 'none';
-                alert('कुछ समस्या आई। कृपया पुनः प्रयास करें।');
-                console.error(err);
-            });
-        }
-    });
-
-    function closeSuccess() {
-        document.getElementById('successOverlay').classList.remove('show');
+    if (SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE') {
+        // Demo mode
+        setTimeout(() => {
+            resetForm();
+            showSuccess();
+        }, 1200);
+    } else {
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }).then(() => {
+            resetForm();
+            showSuccess();
+        }).catch(() => {
+            btn.disabled = false;
+            btn.textContent = '🙏 पंजीकरण करें';
+            spinner.style.display = 'none';
+            alert('कुछ समस्या आई। कृपया पुनः प्रयास करें।');
+        });
     }
+});
+
+function resetForm() {
+    const btn = document.getElementById('submitBtn');
+    const spinner = document.getElementById('spinner');
+    btn.disabled = false;
+    btn.textContent = '🙏 पंजीकरण करें';
+    spinner.style.display = 'none';
+    document.getElementById('goshthi-form').reset();
+    document.querySelectorAll('.ruchi-card').forEach(c => c.classList.remove('active'));
+}
+
+function showSuccess() {
+    document.getElementById('overlay').classList.add('show');
+}
+
+function closePopup() {
+    document.getElementById('overlay').classList.remove('show');
+}
 </script>
 
 </body>
