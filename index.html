@@ -78,74 +78,94 @@
             z-index: 2;
         }
 
-        /* RSS BHAGWA FLAG - REAL DESIGN */
-        .bhagwa-flag-area {
+        /* RSS LOGO AREA - Flag + Text + Person */
+        .rss-logo-row {
             display: flex;
+            align-items: center;
             justify-content: center;
+            gap: 20px;
             margin-bottom: 20px;
         }
 
-        .flag-wrapper {
+        /* ── LEFT: BHAGWA FLAG ── */
+        .flag-box {
             position: relative;
-            width: 120px;
-            height: 100px;
+            width: 80px;
+            height: 110px;
+            flex-shrink: 0;
         }
 
-        /* Wooden Pole */
-        .pole {
+        .flag-pole {
             position: absolute;
-            left: 10px;
+            left: 12px;
             top: 0;
             width: 5px;
-            height: 100px;
-            background: linear-gradient(90deg, #5D3A1A, #8B5E3C, #5D3A1A);
+            height: 110px;
+            background: linear-gradient(90deg, #4a2c0a, #8B5E3C, #6b3f14, #8B5E3C, #4a2c0a);
             border-radius: 3px;
-            box-shadow: 1px 0 3px rgba(0,0,0,0.3);
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
         }
 
-        .pole::before {
+        .flag-pole::before {
             content: '';
             position: absolute;
-            top: -6px;
-            left: -4px;
-            width: 13px;
-            height: 13px;
-            background: radial-gradient(circle, var(--gold), var(--gold-dark));
+            top: -7px;
+            left: -5px;
+            width: 15px;
+            height: 15px;
+            background: radial-gradient(circle at 40% 35%, #ffe066, var(--gold), var(--gold-dark));
             border-radius: 50%;
-            box-shadow: 0 0 8px rgba(255,215,0,0.6);
+            box-shadow: 0 0 10px rgba(255,215,0,0.7), 0 0 3px rgba(255,215,0,0.9);
         }
 
-        /* Bhagwa Flag Cloth - Triangle */
-        .bhagwa-cloth {
+        /* Bhagwa Flag - Triangular (Pataka style) */
+        .flag-cloth {
             position: absolute;
-            top: 5px;
-            left: 15px;
-            width: 0;
-            height: 0;
-            border-top: 35px solid var(--saffron);
-            border-right: 80px solid transparent;
-            filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.3));
-            animation: flagFlutter 2.5s ease-in-out infinite;
-            transform-origin: left top;
+            top: 6px;
+            left: 17px;
+            width: 58px;
+            height: 42px;
+            background: linear-gradient(135deg, #FF5722, var(--saffron), #FF8C00);
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+            filter: drop-shadow(2px 3px 5px rgba(0,0,0,0.35));
+            animation: flagWave 3s ease-in-out infinite;
+            transform-origin: left center;
         }
 
-        /* Second layer for depth */
-        .bhagwa-cloth::after {
+        .flag-cloth::after {
             content: '';
             position: absolute;
-            top: -35px;
+            top: 0;
             left: 0;
-            width: 0;
-            height: 0;
-            border-top: 33px solid rgba(255,140,0,0.7);
-            border-right: 75px solid transparent;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 40%, rgba(0,0,0,0.1) 100%);
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
         }
 
-        @keyframes flagFlutter {
-            0%, 100% { transform: skewY(0deg) scaleX(1); }
-            25% { transform: skewY(-1.5deg) scaleX(0.97); }
-            50% { transform: skewY(0.5deg) scaleX(1.01); }
-            75% { transform: skewY(-0.8deg) scaleX(0.99); }
+        @keyframes flagWave {
+            0%, 100% { transform: perspective(200px) rotateY(0deg) skewY(0deg); }
+            20% { transform: perspective(200px) rotateY(3deg) skewY(-1deg); }
+            50% { transform: perspective(200px) rotateY(-2deg) skewY(0.5deg); }
+            70% { transform: perspective(200px) rotateY(2deg) skewY(-0.5deg); }
+        }
+
+        /* ── CENTER: RSS TEXT ── */
+        .rss-center-text {
+            text-align: center;
+        }
+
+        /* ── RIGHT: PERSON WITH DANDA ── */
+        .person-box {
+            width: 55px;
+            height: 110px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .person-svg {
+            width: 100%;
+            height: 100%;
         }
 
         /* RSS Text */
@@ -155,19 +175,19 @@
 
         .rss-english {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8em;
+            font-size: 3em;
             font-weight: 900;
             color: var(--saffron-glow);
             letter-spacing: 10px;
-            text-shadow: 0 2px 15px rgba(255,103,31,0.6), 0 0 40px rgba(255,103,31,0.2);
+            text-shadow: 0 2px 15px rgba(255,103,31,0.6), 0 0 40px rgba(255,103,31,0.3);
             line-height: 1.1;
         }
 
         .rss-hindi {
-            font-size: 1.15em;
+            font-size: 1.05em;
             color: rgba(255,255,255,0.9);
             font-weight: 600;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             margin-top: 3px;
         }
 
@@ -593,7 +613,41 @@
             }
 
             .header-content {
-                padding: 22px 15px 20px;
+                padding: 22px 12px 20px;
+            }
+
+            .rss-logo-row {
+                gap: 12px;
+            }
+
+            .flag-box {
+                width: 55px;
+                height: 80px;
+            }
+
+            .flag-pole {
+                height: 80px;
+                width: 4px;
+                left: 8px;
+            }
+
+            .flag-pole::before {
+                width: 12px;
+                height: 12px;
+                left: -4px;
+                top: -6px;
+            }
+
+            .flag-cloth {
+                width: 42px;
+                height: 30px;
+                left: 12px;
+                top: 5px;
+            }
+
+            .person-box {
+                width: 38px;
+                height: 80px;
             }
 
             .rss-english {
@@ -602,7 +656,7 @@
             }
 
             .rss-hindi {
-                font-size: 0.95em;
+                font-size: 0.85em;
                 letter-spacing: 2px;
             }
 
@@ -656,37 +710,6 @@
                 padding: 8px 14px 25px;
             }
 
-            .flag-wrapper {
-                width: 90px;
-                height: 75px;
-            }
-
-            .pole {
-                height: 75px;
-                width: 4px;
-                left: 8px;
-            }
-
-            .pole::before {
-                width: 10px;
-                height: 10px;
-                left: -3px;
-                top: -5px;
-            }
-
-            .bhagwa-cloth {
-                border-top: 28px solid var(--saffron);
-                border-right: 60px solid transparent;
-                left: 12px;
-                top: 4px;
-            }
-
-            .bhagwa-cloth::after {
-                border-top: 26px solid rgba(255,140,0,0.7);
-                border-right: 55px solid transparent;
-                top: -28px;
-            }
-
             .form-group input,
             .form-group textarea {
                 padding: 12px 14px;
@@ -729,6 +752,29 @@
                 height: 24px;
                 font-size: 0.7em;
             }
+
+            .flag-box {
+                width: 45px;
+                height: 65px;
+            }
+
+            .flag-pole {
+                height: 65px;
+            }
+
+            .flag-cloth {
+                width: 35px;
+                height: 25px;
+            }
+
+            .person-box {
+                width: 30px;
+                height: 65px;
+            }
+
+            .rss-logo-row {
+                gap: 8px;
+            }
         }
     </style>
 </head>
@@ -741,18 +787,61 @@
     </div>
     <div class="header-content">
 
-        <!-- RSS BHAGWA FLAG - TRIANGULAR -->
-        <div class="bhagwa-flag-area">
-            <div class="flag-wrapper">
-                <div class="pole"></div>
-                <div class="bhagwa-cloth"></div>
+        <!-- RSS Logo Row: Flag | Text | Person -->
+        <div class="rss-logo-row">
+            <!-- LEFT: Bhagwa Flag -->
+            <div class="flag-box">
+                <div class="flag-pole"></div>
+                <div class="flag-cloth"></div>
             </div>
-        </div>
 
-        <!-- RSS Text -->
-        <div class="rss-brand">
-            <div class="rss-english">RSS</div>
-            <div class="rss-hindi">राष्ट्रीय स्वयंसेवक संघ</div>
+            <!-- CENTER: RSS Text -->
+            <div class="rss-center-text">
+                <div class="rss-english">RSS</div>
+                <div class="rss-hindi">राष्ट्रीय स्वयंसेवक संघ</div>
+            </div>
+
+            <!-- RIGHT: Person with Danda -->
+            <div class="person-box">
+                <svg class="person-svg" viewBox="0 0 50 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Danda (stick/lathi) - held in right hand going up -->
+                    <line x1="35" y1="3" x2="33" y2="52" stroke="#8B5E3C" stroke-width="2.5" stroke-linecap="round"/>
+                    <!-- Golden top of danda -->
+                    <circle cx="35" cy="3" r="3" fill="#FFD700"/>
+                    
+                    <!-- Head -->
+                    <circle cx="22" cy="18" r="9" fill="rgba(255,255,255,0.85)"/>
+                    <!-- Topi (RSS cap) -->
+                    <path d="M13 16 Q22 8 31 16" fill="rgba(255,255,255,0.6)" stroke="rgba(255,255,255,0.8)" stroke-width="0.5"/>
+                    
+                    <!-- Neck -->
+                    <line x1="22" y1="27" x2="22" y2="30" stroke="rgba(255,255,255,0.8)" stroke-width="2.5"/>
+                    
+                    <!-- Body (kurta shape) -->
+                    <path d="M14 30 L12 65 L32 65 L30 30 Z" fill="rgba(255,255,255,0.75)" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+                    
+                    <!-- Belt -->
+                    <rect x="12" y="52" width="20" height="3" rx="1" fill="rgba(200,160,80,0.7)"/>
+                    
+                    <!-- Left arm -->
+                    <line x1="14" y1="33" x2="7" y2="52" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
+                    <!-- Right arm (holding danda) -->
+                    <line x1="30" y1="33" x2="33" y2="50" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
+                    
+                    <!-- Shorts -->
+                    <path d="M14 65 L16 82 L22 82 L22 65 Z" fill="rgba(180,140,60,0.6)"/>
+                    <path d="M22 65 L22 82 L28 82 L30 65 Z" fill="rgba(180,140,60,0.6)"/>
+                    
+                    <!-- Left leg -->
+                    <line x1="18" y1="82" x2="16" y2="105" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
+                    <!-- Right leg -->
+                    <line x1="26" y1="82" x2="28" y2="105" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-linecap="round"/>
+                    
+                    <!-- Shoes -->
+                    <ellipse cx="15" cy="106" rx="4" ry="2.5" fill="rgba(80,50,20,0.7)"/>
+                    <ellipse cx="29" cy="106" rx="4" ry="2.5" fill="rgba(80,50,20,0.7)"/>
+                </svg>
+            </div>
         </div>
 
         <!-- Event -->
