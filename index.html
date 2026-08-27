@@ -1043,7 +1043,7 @@
 // ═══════════════════════════════════════════
 // Google Sheet URL - यहाँ अपना URL डालें
 // ═══════════════════════════════════════════
-const SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxQnAY0iGT5xZPEMO186Lb7PxpNYfj0xYsxBejOJqB6HxfszJHgunCO832bI7XtRF9c/exec';
 // ═══════════════════════════════════════════
 
 function selectRuchi(card) {
@@ -1080,7 +1080,7 @@ document.getElementById('goshthi-form').addEventListener('submit', function(e) {
     btn.textContent = 'भेज रहे हैं...';
     spinner.style.display = 'block';
 
-    if (SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE') {
+    if (SCRIPT_URL === 'DEMO_MODE') {
         setTimeout(() => { resetForm(); showSuccess(); }, 1200);
     } else {
         fetch(SCRIPT_URL, {
